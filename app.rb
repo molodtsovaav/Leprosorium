@@ -39,5 +39,5 @@ post '/new' do
     return erb :new
   end
   @db.execute 'insert into posts (content, created_date) values (?, datetime())',[content]
-  erb "You tiped: #{content}"
+  redirect to '/'
 end
